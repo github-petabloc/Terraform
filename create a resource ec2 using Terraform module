@@ -1,7 +1,7 @@
 provider "aws" {
   region     = "ap-southeast-1"
-  access_key = "AKIAJBQLKRYI2EIIQMKQ"
-  secret_key = "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"
+  access_key = "AKIAJBQLKR2EIIQMKQ"
+  secret_key = "MAUIMZopVI+Bf2wgQrF0jSLiVRcqZE/xL7mC"
 }
 module "ec2_cluster" {
   source                 = "terraform-aws-modules/ec2-instance/aws"
