@@ -1,20 +1,18 @@
 provider "aws" {
+  shared_credentials_file = "/root/Terraform/credentials"
   region     = "ap-southeast-1"
-  access_key = "AKIAJBQLKR2EIIQMKQ"
-  secret_key = "MAUIMZopVI+Bf2wgQrF0jSLiVRcqZE/xL7mC"
 }
 module "ec2_cluster" {
   source                 = "terraform-aws-modules/ec2-instance/aws"
   version                = "~> 2.0"
 
-  name                   = "Workstation"
+  name                   = "my-cluster"
   instance_count         = 1
 
-  ami                    = "ami-0d06583a13678c938"
+  ami                    = "ami-0ae3e6717dc99c62b"
   instance_type          = "t2.micro"
   key_name               = "devops"
   subnet_id              = "subnet-6e49ee08"
-
   tags = {
     Terraform   = "true"
     Environment = "dev"
