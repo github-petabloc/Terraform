@@ -1,0 +1,17 @@
+provider "aws" {
+  shared_credentials_file = "~/.aws/credentials"
+  region     = "ap-southeast-1"
+  profile   =  "shubham"
+}
+resource "aws_s3_bucket" "terraform-state-storage-s3" {
+  bucket = "my-terraform-state-s3"
+
+  versioning {
+    # enable with caution, makes deleting S3 buckets tricky
+    enabled = false
+  }
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
