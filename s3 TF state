@@ -7,6 +7,7 @@ terraform {
     key    = "s3/shuabhm/tffile"
     region = "us-east-1"
   }
+}
 
 module "ec2_cluster" {
   source                 = "terraform-aws-modules/ec2-instance/aws"
@@ -24,4 +25,4 @@ module "ec2_cluster" {
     Environment = "dev"
   }
 
-}
+
