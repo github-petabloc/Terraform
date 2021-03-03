@@ -1,10 +1,11 @@
 provider "aws" {
   shared_credentials_file = "~/.aws/credentials"
   region     = "ap-southeast-1"
+}
 terraform {
   backend "s3" {
     bucket = "Tfstatefile"
-    key    = "s3/shuabhm/tffile"
+    key    = "s3/shuabhm/terraform.tfstate"
     region = "us-east-1"
   }
 }
@@ -24,5 +25,6 @@ module "ec2_cluster" {
     Terraform   = "true"
     Environment = "dev"
   }
+}
 
 
